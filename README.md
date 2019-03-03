@@ -8,7 +8,8 @@ This is the source code used for Sebastian Thoss' session about PHPUnit from bas
 
 ## Installation
 1. Just clone this repository 
-`git clone `
+`git clone git@github.com:DjThossi/phpunit-in-four-parts.git`
+1. Go into the repository `cd phpunit-in-four-parts`
 1. Boot docker container `docker-compose run cli bash`
 1. Run composer install inside container `composer install`
 
