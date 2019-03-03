@@ -1,0 +1,28 @@
+{
+    "name": "djthossi/phpunit-in-four-parts",
+    "description": "phpunit in four parts",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Thoss",
+            "email": "dj_thossi@web.de",
+            "homepage": "http://www.sebastianthoss.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DjThossi\\PHPUnit\\": "src/",
+            "DjThossi\\PHPUnit\\UnitTest\\": "tests/Unit",
+            "DjThossi\\PHPUnit\\IntegrationTest\\": "tests/Integration",
+            "DjThossi\\PHPUnit\\AcceptanceTest\\": "tests/Acceptance"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.3",
+        "phpunit/phpunit": "^7.5"
+    }
+}
