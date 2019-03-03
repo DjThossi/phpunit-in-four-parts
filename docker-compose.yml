@@ -8,6 +8,24 @@ services:
       args:
         # possible values 'production' or 'development'
         PHP_ENV_NAME: development
-    container_name: phpunit-four-parts_cli
+    container_name: phpunit-in-four-parts_cli
     volumes:
       - ./:/var/www
+
+  fpm:
+    build:
+      context: .
+      dockerfile: docker/fpm/Dockerfile
+    container_name: phpunit-in-four-parts_fpm
+    volumes:
+      - .:/www
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    container_name: phpunit-in-four-parts_nginx
+    depends_on:
+      - fpm
+    ports:
+      - 81:80
