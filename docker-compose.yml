@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  cli:
+    build:
+      context: .
+      dockerfile: docker/cli/Dockerfile
+      args:
+        # possible values 'production' or 'development'
+        PHP_ENV_NAME: development
+    container_name: phpunit-four-parts_cli
+    volumes:
+      - ./:/var/www
