@@ -7,7 +7,7 @@ use DjThossi\PHPUnit\Domain\Card;
 use DjThossi\PHPUnit\Factory;
 use PHPUnit\Framework\TestCase;
 
-class DummyCardReaderTest extends TestCase
+class CardDetailsTest extends TestCase
 {
     /**
      * @var Card
