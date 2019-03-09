@@ -39,7 +39,7 @@ class CardGetterTest extends TestCase
      */
     private $card;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->name = new Name('Test Name');
         $this->format = new Format('F020');

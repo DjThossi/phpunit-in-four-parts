@@ -37,7 +37,7 @@ class SimplifiedCardTest extends TestCase
      */
     private $optionsMock;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->nameMock = $this->createMock(Name::class);
         $this->formatMock = $this->createMock(Format::class);

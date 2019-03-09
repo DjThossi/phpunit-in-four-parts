@@ -14,7 +14,7 @@ class CardDetailsTest extends TestCase
      */
     private $card;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $factory = new Factory();
         $this->card = $factory->createCardReader()->getCard();
