@@ -5,6 +5,7 @@ namespace DjThossi\PHPUnit\UnitTest\Reader;
 
 use DjThossi\PHPUnit\Collection\ColorCollection;
 use DjThossi\PHPUnit\Domain\Card;
+use DjThossi\PHPUnit\Domain\Sku;
 use DjThossi\PHPUnit\Reader\ColorReader;
 use DjThossi\PHPUnit\Reader\DummyCardReader;
 use DjThossi\PHPUnit\Reader\OptionReader;
@@ -33,8 +34,14 @@ class DummyCardReaderTest extends TestCase
         /** @var MockObject|OptionReader $optionReaderMock */
         $optionReaderMock = $this->createMock(OptionReader::class);
 
+        /** @var MockObject|Sku $skuMock */
+        $skuMock = $this->createMock(Sku::class);
+        $skuMock->expects($this->atLeastOnce())
+            ->method('asString')
+            ->willReturn('KAM11GG');
+
         $cardReader = new DummyCardReader($colorReaderMock, $optionReaderMock);
 
-        $this->assertInstanceOf(Card::class, $cardReader->getCard());
+        $this->assertInstanceOf(Card::class, $cardReader->getCard($skuMock));
     }
 }

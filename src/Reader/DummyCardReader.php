@@ -6,6 +6,7 @@ namespace DjThossi\PHPUnit\Reader;
 use DjThossi\PHPUnit\Domain\Card;
 use DjThossi\PHPUnit\Domain\Format;
 use DjThossi\PHPUnit\Domain\Sku;
+use DjThossi\PHPUnit\Exception\SkuNotFoundException;
 
 class DummyCardReader implements CardReader
 {
@@ -25,8 +26,12 @@ class DummyCardReader implements CardReader
         $this->optionReader = $optionReader;
     }
 
-    public function getCard(): Card
+    public function getCard(Sku $sku): Card
     {
+        if ($sku->asString() !== 'KAM11GG') {
+            throw new SkuNotFoundException('Provided SKU not found');
+        }
+
         return new Card(
             new Sku('KAM11GG'),
             new Format('F020'),

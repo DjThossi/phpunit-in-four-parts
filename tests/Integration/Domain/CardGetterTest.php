@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-namespace DjThossi\PHPUnit\IntegrationTest\Reader;
+namespace DjThossi\PHPUnit\IntegrationTest\Domain;
 
 use DjThossi\PHPUnit\Collection\ColorCollection;
 use DjThossi\PHPUnit\Collection\OptionCollection;

@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace DjThossi\PHPUnit\AcceptanceTest;
 
 use DjThossi\PHPUnit\Domain\Card;
+use DjThossi\PHPUnit\Domain\Sku;
 use DjThossi\PHPUnit\Factory;
+use DjThossi\PHPUnit\Request;
 use PHPUnit\Framework\TestCase;
 
 class CardDetailsTest extends TestCase
@@ -16,8 +18,11 @@ class CardDetailsTest extends TestCase
 
     protected function setUp(): void
     {
+        $request = new Request(new Sku('KAM11GG'));
+
         $factory = new Factory();
-        $this->card = $factory->createCardReader()->getCard();
+        $application = $factory->createApplication();
+        $this->card = $application->run($request);
     }
 
     public function testSku(): void

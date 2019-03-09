@@ -3,8 +3,8 @@
 declare(strict_types=1);
 namespace DjThossi\PHPUnit\IntegrationTest;
 
+use DjThossi\PHPUnit\Application;
 use DjThossi\PHPUnit\Factory;
-use DjThossi\PHPUnit\Reader\DummyCardReader;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,11 +22,11 @@ class FactoryTest extends TestCase
         $this->factory = new Factory();
     }
 
-    public function testCreateCardReader(): void
+    public function testCreateApplication(): void
     {
         $this->assertInstanceOf(
-            DummyCardReader::class,
-            $this->factory->createCardReader()
+            Application::class,
+            $this->factory->createApplication()
         );
     }
 }

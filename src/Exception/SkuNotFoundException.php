@@ -5,6 +5,6 @@ namespace DjThossi\PHPUnit\Exception;
 
 use Exception;
 
-class MissingGetParameterException extends Exception
+class SkuNotFoundException extends Exception
 {
 }

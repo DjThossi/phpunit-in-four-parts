@@ -12,7 +12,12 @@ use DjThossi\PHPUnit\Reader\OptionReader;
 
 class Factory
 {
-    public function createCardReader(): CardReader
+    public function createApplication(): Application
+    {
+        return new Application($this->createCardReader());
+    }
+
+    private function createCardReader(): CardReader
     {
         return new DummyCardReader(
             $this->createColorReader(),

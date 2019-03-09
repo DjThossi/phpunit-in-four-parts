@@ -1,6 +1,6 @@
 <?php
-declare(strict_types=1);
 
+declare(strict_types=1);
 namespace DjThossi\PHPUnit;
 
 use DjThossi\PHPUnit\Domain\Sku;
@@ -21,6 +21,7 @@ class Request
     public static function fromSuperGlobals(): self
     {
         self::ensureSkuIsInGetVariable();
+
         return new self(new Sku($_GET['sku']));
     }
 

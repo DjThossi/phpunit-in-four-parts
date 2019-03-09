@@ -1,5 +1,4 @@
 <?php
-
 namespace DjThossi\PHPUnit\IntegrationTest;
 
 use DjThossi\PHPUnit\Exception\MissingGetParameterException;
