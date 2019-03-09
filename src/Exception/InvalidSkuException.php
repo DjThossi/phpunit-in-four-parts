@@ -5,6 +5,6 @@ namespace DjThossi\PHPUnit\Exception;
 
 use Exception;
 
-class InvalidNameException extends Exception
+class InvalidSkuException extends Exception
 {
 }

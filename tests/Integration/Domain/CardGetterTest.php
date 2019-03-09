@@ -8,16 +8,16 @@ use DjThossi\PHPUnit\Collection\OptionCollection;
 use DjThossi\PHPUnit\Domain\Card;
 use DjThossi\PHPUnit\Domain\Color;
 use DjThossi\PHPUnit\Domain\Format;
-use DjThossi\PHPUnit\Domain\Name;
+use DjThossi\PHPUnit\Domain\Sku;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class CardGetterTest extends TestCase
 {
     /**
-     * @var Name
+     * @var Sku
      */
-    private $name;
+    private $sku;
 
     /**
      * @var Format
@@ -41,7 +41,7 @@ class CardGetterTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->name = new Name('Test Name');
+        $this->sku = new Sku('KAM01GG');
         $this->format = new Format('F020');
         $this->colors = new ColorCollection();
         $this->options = new OptionCollection();
@@ -50,12 +50,12 @@ class CardGetterTest extends TestCase
         $colorMock = $this->createMock(Color::class);
         $this->colors->addColor($colorMock);
 
-        $this->card = new Card($this->name, $this->format, $this->colors, $this->options);
+        $this->card = new Card($this->sku, $this->format, $this->colors, $this->options);
     }
 
-    public function testCanRetrieveName(): void
+    public function testCanRetrieveSku(): void
     {
-        $this->assertSame($this->name, $this->card->getName());
+        $this->assertSame($this->sku, $this->card->getSku());
     }
 
     public function testCanRetrieveFormat(): void

@@ -7,7 +7,7 @@ use DjThossi\PHPUnit\Collection\ColorCollection;
 use DjThossi\PHPUnit\Collection\OptionCollection;
 use DjThossi\PHPUnit\Domain\Card;
 use DjThossi\PHPUnit\Domain\Format;
-use DjThossi\PHPUnit\Domain\Name;
+use DjThossi\PHPUnit\Domain\Sku;
 use DjThossi\PHPUnit\Exception\InvalidColorCollectionException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -18,9 +18,9 @@ use PHPUnit\Framework\TestCase;
 class SimplifiedCardTest extends TestCase
 {
     /**
-     * @var MockObject|Name
+     * @var MockObject|Sku
      */
-    private $nameMock;
+    private $skuMock;
 
     /**
      * @var MockObject|Format
@@ -39,7 +39,7 @@ class SimplifiedCardTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->nameMock = $this->createMock(Name::class);
+        $this->skuMock = $this->createMock(Sku::class);
         $this->formatMock = $this->createMock(Format::class);
         $this->colorsMock = $this->createMock(ColorCollection::class);
         $this->optionsMock = $this->createMock(OptionCollection::class);
@@ -48,23 +48,23 @@ class SimplifiedCardTest extends TestCase
     public function testCanCreateInstance(): void
     {
         $this->setColorsCount(1);
-        $card = new Card($this->nameMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
+        $card = new Card($this->skuMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
 
         $this->assertInstanceOf(Card::class, $card);
     }
 
-    public function testCanRetrieveName(): void
+    public function testCanRetrieveSku(): void
     {
         $this->setColorsCount(1);
-        $card = new Card($this->nameMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
+        $card = new Card($this->skuMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
 
-        $this->assertSame($this->nameMock, $card->getName());
+        $this->assertSame($this->skuMock, $card->getSku());
     }
 
     public function testCanRetrieveFormat(): void
     {
         $this->setColorsCount(1);
-        $card = new Card($this->nameMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
+        $card = new Card($this->skuMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
 
         $this->assertSame($this->formatMock, $card->getFormat());
     }
@@ -72,7 +72,7 @@ class SimplifiedCardTest extends TestCase
     public function testCanRetrieveColors(): void
     {
         $this->setColorsCount(1);
-        $card = new Card($this->nameMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
+        $card = new Card($this->skuMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
 
         $this->assertSame($this->colorsMock, $card->getColors());
     }
@@ -80,7 +80,7 @@ class SimplifiedCardTest extends TestCase
     public function testCanRetrieveOptions(): void
     {
         $this->setColorsCount(1);
-        $card = new Card($this->nameMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
+        $card = new Card($this->skuMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
 
         $this->assertSame($this->optionsMock, $card->getOptions());
     }
@@ -92,7 +92,7 @@ class SimplifiedCardTest extends TestCase
         $this->expectException(InvalidColorCollectionException::class);
         $this->expectExceptionMessage('Every card has at least one color');
 
-        new Card($this->nameMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
+        new Card($this->skuMock, $this->formatMock, $this->colorsMock, $this->optionsMock);
     }
 
     private function setColorsCount(int $count): void

@@ -5,7 +5,7 @@ namespace DjThossi\PHPUnit\Reader;
 
 use DjThossi\PHPUnit\Domain\Card;
 use DjThossi\PHPUnit\Domain\Format;
-use DjThossi\PHPUnit\Domain\Name;
+use DjThossi\PHPUnit\Domain\Sku;
 
 class DummyCardReader implements CardReader
 {
@@ -28,7 +28,7 @@ class DummyCardReader implements CardReader
     public function getCard(): Card
     {
         return new Card(
-            new Name('30th Birthday invitation'),
+            new Sku('KAM11GG'),
             new Format('F020'),
             $this->colorReader->getColors(),
             $this->optionReader->getOptions()

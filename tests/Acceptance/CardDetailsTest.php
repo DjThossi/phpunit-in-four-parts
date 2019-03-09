@@ -20,9 +20,9 @@ class CardDetailsTest extends TestCase
         $this->card = $factory->createCardReader()->getCard();
     }
 
-    public function testName(): void
+    public function testSku(): void
     {
-        $this->assertEquals('30th Birthday invitation', $this->card->getName()->asString());
+        $this->assertEquals('KAM11GG', $this->card->getSku()->asString());
     }
 
     public function testFormat(): void

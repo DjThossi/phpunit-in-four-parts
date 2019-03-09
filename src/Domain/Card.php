@@ -10,9 +10,9 @@ use DjThossi\PHPUnit\Exception\InvalidColorCollectionException;
 class Card
 {
     /**
-     * @var Name
+     * @var Sku
      */
-    private $name;
+    private $sku;
 
     /**
      * @var Format
@@ -29,19 +29,19 @@ class Card
      */
     private $options;
 
-    public function __construct(Name $name, Format $format, ColorCollection $colors, OptionCollection $options)
+    public function __construct(Sku $sku, Format $format, ColorCollection $colors, OptionCollection $options)
     {
         $this->ensureCardHasAtLeastOneColor($colors);
 
-        $this->name = $name;
+        $this->sku = $sku;
         $this->format = $format;
         $this->colors = $colors;
         $this->options = $options;
     }
 
-    public function getName(): Name
+    public function getSku(): Sku
     {
-        return $this->name;
+        return $this->sku;
     }
 
     public function getFormat(): Format
