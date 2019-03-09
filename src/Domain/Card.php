@@ -31,7 +31,7 @@ class Card
 
     public function __construct(Name $name, Format $format, ColorCollection $colors, OptionCollection $options)
     {
-        $this->ensureBookHasAtLeastOneColor($colors);
+        $this->ensureCardHasAtLeastOneColor($colors);
 
         $this->name = $name;
         $this->format = $format;
@@ -59,7 +59,7 @@ class Card
         return $this->options;
     }
 
-    private function ensureBookHasAtLeastOneColor(ColorCollection $colors): void
+    private function ensureCardHasAtLeastOneColor(ColorCollection $colors): void
     {
         if ($colors->count() > 0) {
             return;
