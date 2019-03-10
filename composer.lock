@@ -4,9 +4,92 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "247980e7e539edfd4645cbb58158d834",
+    "content-hash": "b736432f51414cba14372f0c75e067f4",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "djthossi/ensure",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DjThossi/Ensure.git",
+                "reference": "19b391cc24b4123cf0d9532e1698d672049ddb84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DjThossi/Ensure/zipball/19b391cc24b4123cf0d9532e1698d672049ddb84",
+                "reference": "19b391cc24b4123cf0d9532e1698d672049ddb84",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DjThossi\\": "src/DjThossi",
+                    "Unit\\": "tests/Unit"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thoss",
+                    "email": "dj_thossi@web.de",
+                    "homepage": "http://www.sebastianthoss.de"
+                }
+            ],
+            "description": "Some PHP Traits for ensuring values",
+            "time": "2017-01-25T13:43:01+00:00"
+        },
+        {
+            "name": "djthossi/smoke-testing-php",
+            "version": "1.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DjThossi/smoke-testing-php.git",
+                "reference": "eebdd25b64371740782d1fc1cc4f7bf380417424"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DjThossi/smoke-testing-php/zipball/eebdd25b64371740782d1fc1cc4f7bf380417424",
+                "reference": "eebdd25b64371740782d1fc1cc4f7bf380417424",
+                "shasum": ""
+            },
+            "require": {
+                "djthossi/ensure": "~1",
+                "ext-curl": "*",
+                "php": ">=5.6",
+                "php-curl-class/php-curl-class": "~7.1",
+                "phpunit/phpunit": ">=5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DjThossi\\SmokeTestingPhp\\": "src/",
+                    "DjThossi\\SmokeTestingPhp\\Test\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Thoss",
+                    "email": "dj_thossi@web.de",
+                    "homepage": "http://www.sebastianthoss.de"
+                }
+            ],
+            "description": "smoke testing with php",
+            "time": "2019-03-03T17:30:33+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.1.0",
@@ -210,6 +293,63 @@
             ],
             "description": "Library for handling version information and constraints",
             "time": "2018-07-08T19:19:57+00:00"
+        },
+        {
+            "name": "php-curl-class/php-curl-class",
+            "version": "7.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-curl-class/php-curl-class.git",
+                "reference": "c15f23ce5d52a4c68b69640ed6510a9d2a98ec6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/c15f23ce5d52a4c68b69640ed6510a9d2a98ec6f",
+                "reference": "c15f23ce5d52a4c68b69640ed6510a9d2a98ec6f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Curl\\": "src/Curl/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "Zach Borboa"
+                }
+            ],
+            "description": "PHP Curl Class makes it easy to send HTTP requests and integrate with web APIs.",
+            "homepage": "https://github.com/php-curl-class/php-curl-class",
+            "keywords": [
+                "api",
+                "class",
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "json",
+                "php",
+                "requests",
+                "rest",
+                "restful",
+                "web service",
+                "xml"
+            ],
+            "time": "2017-09-04T21:38:09+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

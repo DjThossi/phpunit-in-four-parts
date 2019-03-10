@@ -12,20 +12,7 @@ services:
     volumes:
       - ./:/var/www
 
-  fpm:
-    build:
-      context: .
-      dockerfile: docker/fpm/Dockerfile
-    container_name: phpunit-in-four-parts_fpm
+  web:
+    image: php:7.3-apache
     volumes:
-      - .:/www
-
-  nginx:
-    build:
-      context: .
-      dockerfile: docker/nginx/Dockerfile
-    container_name: phpunit-in-four-parts_nginx
-    depends_on:
-      - fpm
-    ports:
-      - 81:80
+      - .:/var/www/html/

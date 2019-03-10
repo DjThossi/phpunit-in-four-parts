@@ -26,6 +26,10 @@
         <testsuite name="acceptance">
             <directory suffix="Test.php">tests/Acceptance/</directory>
         </testsuite>
+
+        <testsuite name="smoke-test">
+            <directory suffix="Test.php">tests/SmokeTest/</directory>
+        </testsuite>
     </testsuites>
 
     <logging>
