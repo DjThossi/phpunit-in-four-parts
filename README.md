@@ -23,6 +23,7 @@ Furthermore I've set up several different test suites to make it easier and fast
 - Unit Tests `vendor/bin/phpunit --testsuite=unit`  
 - Integration Tests `vendor/bin/phpunit --testsuite=integration`  
 - Acceptance Tests `vendor/bin/phpunit --testsuite=acceptance`
+- To generate coverage `vendor/bin/phpunit --testsuite=coverage`  
 
 
 ## Smoke Tests
