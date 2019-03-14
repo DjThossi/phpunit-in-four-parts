@@ -14,8 +14,8 @@ try {
     $application = $factory->createApplication();
     $card = $application->run($request);
 
-    echo "<h1>Success!!!</h1> <br \>\n";
-    var_dump($card);
+    echo "<h1>Success!!!</h1> <br \>";
+    var_dump($card->getFormat()->asString());
 } catch (Exception $exception) {
     http_response_code(500);
 
