@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.7/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.0/phpunit.xsd"
          forceCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"
-         beStrictAboutTestsThatDoNotTestAnything="true"
          failOnWarning="true"
          failOnRisky="true"
          colors="true"
@@ -16,19 +15,19 @@
 
     <testsuites>
         <testsuite name="unit">
-            <directory suffix="Test.php">tests/Unit/</directory>
+            <directory>tests/Unit/</directory>
         </testsuite>
 
         <testsuite name="integration">
-            <directory suffix="Test.php">tests/Integration/</directory>
+            <directory>tests/Integration/</directory>
         </testsuite>
 
         <testsuite name="acceptance">
-            <directory suffix="Test.php">tests/Acceptance/</directory>
+            <directory>tests/Acceptance/</directory>
         </testsuite>
 
         <testsuite name="smoke-test">
-            <directory suffix="Test.php">tests/SmokeTest/</directory>
+            <directory>tests/SmokeTest/</directory>
         </testsuite>
     </testsuites>
 
@@ -37,7 +36,7 @@
     </logging>
 
     <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="false">
+        <whitelist>
             <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
