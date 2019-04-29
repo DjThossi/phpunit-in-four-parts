@@ -5,6 +5,7 @@ namespace DjThossi\PHPUnit\UnitTest\Collection;
 
 use DjThossi\PHPUnit\Collection\OptionCollection;
 use DjThossi\PHPUnit\Domain\Option;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,11 +16,12 @@ class OptionCollectionTest extends TestCase
     public function testCanCanAddOption(): void
     {
         $options = new OptionCollection();
-
         $this->assertEmpty($options);
 
-        $options->addOption(new Option('D01'));
+        /** @var Option|MockObject $option */
+        $option = $this->createMock(Option::class);
 
+        $options->addOption($option);
         $this->assertCount(1, $options);
     }
 }

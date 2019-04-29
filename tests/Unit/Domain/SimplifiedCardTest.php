@@ -97,7 +97,7 @@ class SimplifiedCardTest extends TestCase
 
     private function setColorsCount(int $count): void
     {
-        $this->colorsMock->expects($this->once())
+        $this->colorsMock
             ->method('count')
             ->willReturn($count);
     }

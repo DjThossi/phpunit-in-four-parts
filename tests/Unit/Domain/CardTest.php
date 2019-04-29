@@ -27,8 +27,7 @@ class CardTest extends TestCase
 
         /** @var MockObject|ColorCollection $colorsMock */
         $colorsMock = $this->createMock(ColorCollection::class);
-        $colorsMock->expects($this->once())
-            ->method('count')
+        $colorsMock->method('count')
             ->willReturn(1);
 
         /** @var MockObject|OptionCollection $optionsMock */
@@ -49,8 +48,7 @@ class CardTest extends TestCase
 
         /** @var MockObject|ColorCollection $colorsMock */
         $colorsMock = $this->createMock(ColorCollection::class);
-        $colorsMock->expects($this->once())
-            ->method('count')
+        $colorsMock->method('count')
             ->willReturn(1);
 
         /** @var MockObject|OptionCollection $optionsMock */
@@ -71,8 +69,7 @@ class CardTest extends TestCase
 
         /** @var MockObject|ColorCollection $colorsMock */
         $colorsMock = $this->createMock(ColorCollection::class);
-        $colorsMock->expects($this->once())
-            ->method('count')
+        $colorsMock->method('count')
             ->willReturn(1);
 
         /** @var MockObject|OptionCollection $optionsMock */
@@ -93,8 +90,7 @@ class CardTest extends TestCase
 
         /** @var MockObject|ColorCollection $colorsMock */
         $colorsMock = $this->createMock(ColorCollection::class);
-        $colorsMock->expects($this->once())
-            ->method('count')
+        $colorsMock->method('count')
             ->willReturn(1);
 
         /** @var MockObject|OptionCollection $optionsMock */
@@ -115,8 +111,7 @@ class CardTest extends TestCase
 
         /** @var MockObject|ColorCollection $colorsMock */
         $colorsMock = $this->createMock(ColorCollection::class);
-        $colorsMock->expects($this->once())
-            ->method('count')
+        $colorsMock->method('count')
             ->willReturn(1);
 
         /** @var MockObject|OptionCollection $optionsMock */
@@ -137,8 +132,7 @@ class CardTest extends TestCase
 
         /** @var MockObject|ColorCollection $colorsMock */
         $colorsMock = $this->createMock(ColorCollection::class);
-        $colorsMock->expects($this->once())
-            ->method('count')
+        $colorsMock->method('count')
             ->willReturn(0);
 
         /** @var MockObject|OptionCollection $optionsMock */

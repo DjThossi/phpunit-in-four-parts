@@ -16,11 +16,9 @@ class ColorCollectionTest extends TestCase
     public function testCanCanAddColor(): void
     {
         $colors = new ColorCollection();
-
         $this->assertEmpty($colors);
 
         $colors->addColor(new Color('C05'));
-
         $this->assertCount(1, $colors);
     }
 }

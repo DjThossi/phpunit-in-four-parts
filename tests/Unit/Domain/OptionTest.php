@@ -27,8 +27,12 @@ class OptionTest extends TestCase
     public function workingOptionDataProvider(): array
     {
         return [
-            'Structure V01' => ['V01'],
-            'Structure D01' => ['D01'],
+            'option code V00' => ['V00'],
+            'option code V01' => ['V01'],
+            'option code V99' => ['V99'],
+            'option code D00' => ['D00'],
+            'option code D01' => ['D01'],
+            'option code D99' => ['D99'],
         ];
     }
 
@@ -48,8 +52,8 @@ class OptionTest extends TestCase
     public function brokenOptionDataProvider(): array
     {
         return [
-            'Structure A01' => ['A01'],
-            'Structure AAA' => ['AAA'],
+            'option code A01' => ['A01'],
+            'option code VVV' => ['VVV'],
         ];
     }
 }
