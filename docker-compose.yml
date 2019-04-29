@@ -16,3 +16,5 @@ services:
     image: php:7.3-apache
     volumes:
       - .:/var/www/html/
+    ports:
+      - 81:80
