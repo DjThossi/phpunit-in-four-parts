@@ -30,6 +30,6 @@ Furthermore I've set up several different test suites to make it easier and fast
 
 To run the SimpleExampleTest you need to have the docker web container running. Otherwise this example will fail.
 
-1. Boot web docker container `docker-compose up -d web`
-1. Boot cli docker container `docker-compose run cli bash`
+1. Boot web docker container in background `docker-compose up -d web`
+1. Run cli docker container `docker-compose run cli bash`
 1. Inside cli container  `vendor/bin/phpunit --testsuite=smoke-test`
